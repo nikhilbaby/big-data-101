@@ -1,0 +1,20 @@
+===== List file =====
+hadoop fs -ls
+hadoop fs -ls /tmp/demo/
+
+===== Create a folder =====
+hadoop fs -mkdir demo
+hadoop fs -mkdir -p /tmp/demo
+
+===== Show contents of file =====
+hadoop fs -cat /tmp/data/*
+
+===== Copy file from local to HDFS =====
+hadoop fs -copyFromLocal ./data/sample.txt /tmp/demo/data
+hadoop fs -put ./data/* /tmp/demo/data/
+
+===== Delete file/files =====
+hadoop fs -rm filename.txt
+hadoop fs -rm -r /tmp/data/*
+
+

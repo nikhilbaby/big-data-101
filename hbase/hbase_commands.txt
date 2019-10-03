@@ -1,0 +1,27 @@
+### Create a new table with column family data
+create 'demo','data'
+
+### List all tables
+list
+
+### Insert to table
+put 'demo', 1, 'data:col1', 'test'
+
+### Show contents of table
+scan ‘demo’
+
+### Find count of table
+count 'demo'
+count 'demo', INTERVAL=>100
+
+### Disable table
+disable 'demo'
+
+### Drop table
+drop 'demo'
+
+### Truncate table
+truncate 'demo'
+
+
+

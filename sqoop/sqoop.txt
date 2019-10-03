@@ -1,0 +1,10 @@
+// Table creation for sqoop export in mysql
+create table battles ( name text null, battle_number text null, attacker_king text null, defender_king text null );
+
+
+// Move data from Hive to MySQL
+sqoop export --connect jdbc:mysql://x.x.x.x/demo --username demo --password Demo@123 --table battles --hcatalog-table battles
+
+
+//Move data from sql to Hadoop(Single Mapper)
+sqoop import --connect jdbc:mysql://x.x.x.x/demo --username demo --password Demo@123 --columns name,battle_number,attacker_king,defender_king --table battles --target-dir /tmp/sqoop/import1/ --fields-terminated-by "," --hive-import --create-hive-table --hive-table import_battles -m 1
